@@ -8,6 +8,7 @@ app.use(express.urlencoded({extended:true}));
 require("dotenv").config();
 app.set("engine view","ejs");
 app.set("views",path.join(__dirname,"/views"));
+app.use("/assets",express.static(path.join(__dirname,"public/icons")));
 app.get("/",(req,res)=>{
     res.render("index.ejs");
 });
